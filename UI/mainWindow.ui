@@ -120,17 +120,17 @@
     </item>
     <item>
      <property name="text">
-      <string>AGPID</string>
+      <string>AGIPD</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>Rayonix</string>
+      <string>Jungfrau</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>Rigaku</string>
+      <string>Eiger4M</string>
      </property>
     </item>
    </widget>
@@ -173,7 +173,7 @@
      <string>Resolution at the corner of the detector:</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="detectorDistance_2">
+   <widget class="QLineEdit" name="resolutionAtEdge">
     <property name="geometry">
      <rect>
       <x>280</x>
@@ -183,7 +183,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLineEdit" name="detectorDistance_3">
+   <widget class="QLineEdit" name="resolutionAtCorner">
     <property name="geometry">
      <rect>
       <x>280</x>
