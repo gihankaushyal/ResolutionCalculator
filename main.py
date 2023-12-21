@@ -49,28 +49,31 @@ class MainWindow(qtw.QMainWindow):
 
     
     def calculateResolution(self):
-
-        # reading the beam engergy from the gui
-        beamEnergy = float(self.beamEnergy.text())
-
-        # reading the detector distance from the gui
-        detectorDistance = float(self.detectorDistance.text()) / 1000
         
-        width, height = self.detectorSelection()
+        try:
+            # reading the beam engergy from the gui
+            beamEnergy = float(self.beamEnergy.text())
 
-        edge = width/2
-        diagonal = np.sqrt(width**2 + height**2)
-        corner = diagonal/2
+            # reading the detector distance from the gui
+            detectorDistance = float(self.detectorDistance.text()) / 1000
+            
+            width, height = self.detectorSelection()
 
-        print(self.waveLenthCaluclation(beamEnergy))
-        print(edge)
-        print(corner)
-        resolutionAtEdge=round(self.waveLenthCaluclation(beamEnergy)/(2*math.sin(0.5*math.atan2(edge,detectorDistance)))* 10**10,2)
-        resolutionAtCorner=round(self.waveLenthCaluclation(beamEnergy)/(2*math.sin(0.5*math.atan2(corner,detectorDistance))) * 10**10,2)
+            edge = width/2
+            diagonal = np.sqrt(width**2 + height**2)
+            corner = diagonal/2
 
-        # setting the caluclated values in the gui
-        self.resolutionAtEdge.setText(str(resolutionAtEdge))
-        self.resolutionAtCorner.setText(str(resolutionAtCorner))
+            # print(self.waveLenthCaluclation(beamEnergy))
+            # print(edge)
+            # print(corner)
+            resolutionAtEdge=round(self.waveLenthCaluclation(beamEnergy)/(2*math.sin(0.5*math.atan2(edge,detectorDistance)))* 10**10,2)
+            resolutionAtCorner=round(self.waveLenthCaluclation(beamEnergy)/(2*math.sin(0.5*math.atan2(corner,detectorDistance))) * 10**10,2)
+
+            # setting the caluclated values in the gui
+            self.resolutionAtEdge.setText(str(resolutionAtEdge))
+            self.resolutionAtCorner.setText(str(resolutionAtCorner))
+        except:
+            pass
 
 
 
